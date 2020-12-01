@@ -24,7 +24,7 @@ def get(day=None):
     country = request.args.get("country")
     weather_demo_controller = WeatherDemoController()
     if day:
-        data = weather_demo_controller.get_weather_forecast(city, day)
+        data = weather_demo_controller.get_weather_forecast(city, country, day)
     else:
         data = weather_demo_controller.get_weather_info(city, country)
     return jsonify({"data": data})
